@@ -1,0 +1,64 @@
+GeneNetCoherence: Gene Network Coherence based on interaction relevance 
+
+================================
+
+This is a Java application for network analysis. The application uses 
+the metabolic pathways stored in kegg to rate the coherence of the input network.
+
+
+The code is on http://fgomezvela.github.com/GeneNetCoherence/.
+
+=================================
+
+This application can be used in linux, mac, and windows.
+To use this tool, you must first download the GeneNetCoherence.jar file.
+
+
+
+Usage information
+==================================
+
+> java -jar GeneNetCoherence.jar <inputFile> <organismId> <accuracyLevel> <outPutFile> [classical]
+* Usage: java -jar GeneNetCoherence.jar Biogrid.txt sce 3 results.txt
+
+
+
+ARGUMENTS:
+
+inputFile:
+	-- Notice: The tool uses the relative path from the root
+	-- Specification:
+				geneA;geneB
+				geneC;geneD
+				...
+
+organismId:
+	-- Denotes the organism prefix. see: http://www.kegg.jp/kegg/catalog/org_list.html
+	-- Example: 
+		    hsa    denotes	Homo sapiens (human)
+		    sce    denotes	Saccharomyces cerevisiae (budding yeast)
+		    ...	
+
+accuracyLevel:
+	-- The threshold for the accuracy level of the methodology.
+	-- The accuracy level must be a value between 1 and 5.
+
+outPutFile:
+	-- The threshold for the accuracy level of the methodology.
+	-- Specification:
+				
+				PathwayId	Pathway Description	 Hits level 1	Hits level 2 ... Hits level n	Cumulative Hits level n		Cumulative Faliures level n	Network Coherence
+				
+				path1		funcional description	 value 1	value 2		 value n	float					float				float
+				
+				...
+
+[classical]:(optional)
+	-- If you want to use the "classical use of kegg".
+	-- With this option, the pathways will not be transformed into a gene network.  
+	-- value musa be: "classical". 
+
+
+AUTHOR:
+Francisco Gómez Vela <fgomez@upo.es> and Norberto Díaz Díaz <ndiaz@upo.es>.
+Copyright © 2012 Universidad Pablo de Olavide, Spain.

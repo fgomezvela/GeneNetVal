@@ -47,16 +47,16 @@ outPutFile:
 	-- The threshold for the accuracy level of the methodology.
 	-- Specification:
 				
-				PathwayId	Pathway Description	 Hits level 1	Hits level 2 ... Hits level n	Cumulative Hits level n		Cumulative Faliures level n	Network Coherence
+PathwayId	Pathway Description	 Hits level 1	Hits level 2 ... Hits level n	Cumulative Hits level n		Cumulative Faliures level n	Network Coherence
 				
-				path1		funcional description	 value 1	value 2		 value n	float					float				float
+path1		funcional description	 value 1	value 2		 value n	float				float				float
 				
 				...
 
 [classical]:(optional)
 	-- If you want to use the "classical use of kegg".
 	-- With this option, the pathways will not be transformed into a gene network.  
-	-- value musa be: "classical". 
+	-- value must be: "classical". 
 
 
 AUTHOR:

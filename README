@@ -18,14 +18,14 @@ To use this tool, you must first download the GeneNetCoherence.jar file.
 Usage information
 ==================================
 
-> java -jar GeneNetCoherence.jar <inputFile> <organismId> <accuracyLevel> <outPutFile> [classical]
+> java -jar GeneNetCoherence.jar inputFile organismId accuracyLevel outPutFile [classical]
 * Usage: java -jar GeneNetCoherence.jar Biogrid.txt sce 3 results.txt
 
 
 
 ARGUMENTS:
 
-inputFile:
+inputFile:\n
 	-- Notice: The tool uses the relative path from the root
 	-- Specification:
 				geneA;geneB

@@ -3,7 +3,7 @@
 ================================
 
 This is a Java application for network analysis. The application uses 
-the metabolic pathways stored in kegg to rate the coherence of the input network.
+the metabolic pathways stored in kegg to rate the coherence of an input network.
 
 
 The code is on http://fgomezvela.github.com/GeneNetCoherence/.
@@ -11,7 +11,9 @@ The code is on http://fgomezvela.github.com/GeneNetCoherence/.
 =================================
 
 This application can be used in linux, mac, and windows.
-To use this tool, you must first download the GeneNetCoherence.jar file.
+To use this tool, you must first download the GeneNetCoherence.zip file.
+
+In ExampleData folder there are some gene networks for testing the tool.
 
 
 
@@ -33,25 +35,29 @@ inputFile:\n
 				...
 
 organismId:
-	-- Denotes the organism prefix. see: http://www.kegg.jp/kegg/catalog/org_list.html
+	-- Denotes the organism prefix. See: http://www.kegg.jp/kegg/catalog/org_list.html
 	-- Example: 
-		    hsa    denotes	Homo sapiens (human)
-		    sce    denotes	Saccharomyces cerevisiae (budding yeast)
+		    prefix: hsa    	organism: Homo sapiens (human)
+		    prefix: sce    	organism: Saccharomyces cerevisiae (budding yeast)
 		    ...	
 
 accuracyLevel:
 	-- The threshold for the accuracy level of the methodology.
-	-- The accuracy level must be a value between 1 and 5.
+	-- This argument indicates the maximun level to calculate the Hits
+	-- The accuracy level must be a value greater than 1.
 
 outPutFile:
-	-- The threshold for the accuracy level of the methodology.
+	-- The results
 	-- Specification:
 				
-PathwayId Pathway Description	 Hits level 1	Hits level 2 ... Hits level n	Cumulative Hits level n	 Cumulative Faliures level n	Network Coherence
+		PathwayId : Pathway identifier
+		Pathway Description : Pathway functional description	 
+		Hits level i : Number of Hits with the accuracy level i 
+		Cumulative Hits level n : The value of Cumulative Hits level n	 
+		Cumulative Faliures level n : The value of Cumulative Hits level n		
+		Network Coherence level n: The value of the input network coherence with the pathway (level n).
 				
-path1	funcional description	 value 1	value 2		 value n	float			  float				float
-				
-				...
+
 
 classical:(optional)
 	-- If you want to use the "classical use of kegg".

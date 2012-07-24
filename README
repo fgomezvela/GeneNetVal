@@ -21,7 +21,7 @@ Usage information
 ==================================
 
 > java -jar GeneNetCoherence.jar inputFile organismId accuracyLevel outPutFile [classical]
-* Usage: java -jar GeneNetCoherence.jar Biogrid.txt sce 3 results.txt
+* Usage: java -jar GeneNetCoherence.jar Nariai et al. (2004).txt sce 3 results.txt
 
 
 
@@ -62,7 +62,7 @@ outputFile:
 classical:(optional)
 	-- If you want to use the "classical use of KEGG".
 	-- With this option, the pathways will not be transformed into a gene network.  
-	-- value must be: "classical". Example: java -jar GeneNetCoherence.jar Biogrid.txt sce 3 results.txt classical
+	-- Example: java -jar GeneNetCoherence.jar Nariai et al. (2004).txt sce 3 results.txt classical
 
 
 Example Data

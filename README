@@ -27,7 +27,7 @@ Usage information
 
 ARGUMENTS:
 
-inputFile:\n
+inputFile:
 	-- Notice: The tool uses the relative path from the root
 	-- Specification:
 				geneA;geneB
@@ -46,8 +46,8 @@ accuracyLevel:
 	-- This argument indicates the maximun level to calculate the Hits
 	-- The accuracy level must be a value greater than 1.
 
-outPutFile:
-	-- The results
+outputFile:
+	-- The path to the result file.
 	-- Specification:
 				
 		PathwayId : Pathway identifier
@@ -60,9 +60,9 @@ outPutFile:
 
 
 classical:(optional)
-	-- If you want to use the "classical use of kegg".
+	-- If you want to use the "classical use of KEGG".
 	-- With this option, the pathways will not be transformed into a gene network.  
-	-- value must be: "classical". 
+	-- value must be: "classical". Example: java -jar GeneNetCoherence.jar Biogrid.txt sce 3 results.txt classical
 
 
 Example Data

@@ -54,7 +54,7 @@ outputFile:
 		Pathway Description : Pathway functional description	 
 		Hits level i : Number of Hits with the accuracy level i 
 		Cumulative Hits level n : The value of Cumulative Hits level n	 
-		Cumulative Faliures level n : The value of Cumulative Hits level n		
+		Cumulative Failures level n : The value of Cumulative Hits level n		
 		Network Coherence level n: The value of the input network coherence with the pathway (level n).
 				
 

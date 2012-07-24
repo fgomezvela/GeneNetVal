@@ -65,6 +65,21 @@ classical:(optional)
 	-- value must be: "classical". 
 
 
+Example Data
+==================================
+In the example data folder, there are stored four  well-known yeast networks. Network specification:
+
+	-- Nariai et al. (2004).txt: This network represents the Saccharomyces cerevisae (SCE) cell cycle
+			       	    and it is composed of 47 relationships between 43 yeast genes. 
+				    The network is a reconstruction of the cell cylce from time–series microarray 
+				    data refined using PPI data (Spellman et al., 1998).
+	-- Batada et al. (2006).txt: The network presented by Batada et al. (2006) where a PPI network is presented
+				     in the study of the highly connected proteins in a network (hubs).
+	-- Cherry et al.(2011)(SGD).txt: This network that provides an access to the complete Saccharomyces cerevisiae genomic sequence. 
+					In this study, only the PPI + PDI (protein–DNA interaction) data available were taken. 
+	-- Lee et al. (2007)(YeastNet v.2).txt: Lee et al. (2007)(YeastNet v.2) which combines PPI, PDI, coexpression, phy- logenetic 
+						conservation and literature information.
+
 AUTHOR:
 Francisco Gómez Vela <fgomez@upo.es> and Norberto Díaz Díaz <ndiaz@upo.es>.
 Copyright © 2012 Universidad Pablo de Olavide, Spain.

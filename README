@@ -55,7 +55,7 @@ outputFile:
 		Hits level i : Number of Hits with the accuracy level i 
 		Cumulative Hits level n : The value of Cumulative Hits level n	 
 		Cumulative Failures level n : The value of Cumulative Hits level n		
-		Network Validity level n: The value of the input network coherence with the pathway (level n).
+		Network Validity level n: The value of the input network validity with the pathway (level n).
 				
 
 

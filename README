@@ -1,17 +1,17 @@
-# GeneNetCoherence: Gene Network Coherence based on interaction relevance 
+# GeneNetVal: Gene Network Validity based on interaction relevance 
 
 ================================
 
 This is a Java application for network analysis. The application uses 
-the metabolic pathways stored in kegg to rate the coherence of an input network.
+the metabolic pathways stored in kegg to rate the validity of an input network.
 
 
-The code is on http://fgomezvela.github.com/GeneNetCoherence/.
+The code is on http://fgomezvela.github.com/GeneNetVal/.
 
 =================================
 
 This application can be used in linux, mac, and windows.
-To use this tool, you must first download the GeneNetCoherence.zip file.
+To use this tool, you must first download the GeneNetValidity.zip file.
 
 In ExampleData folder there are some gene networks for testing the tool.
 
@@ -20,8 +20,8 @@ In ExampleData folder there are some gene networks for testing the tool.
 Usage information
 ==================================
 
-> java -jar GeneNetCoherence.jar inputFile organismId accuracyLevel outPutFile [classical]
-* Usage: java -jar GeneNetCoherence.jar Nariai(2004).txt sce 3 results.txt
+> java -jar GeneNetVal.jar inputFile organismId level outPutFile [classical]
+* Usage: java -jar GeneNetVal.jar Nariai(2004).txt sce 3 results.txt
 
 
 
@@ -42,9 +42,9 @@ organismId:
 		    ...	
 
 accuracyLevel:
-	-- The threshold for the accuracy level of the methodology.
+	-- The threshold for the distance level of the methodology.
 	-- This argument indicates the maximun level to calculate the Hits
-	-- The accuracy level must be a value greater than 1.
+	-- The distance level must be a value greater than 1.
 
 outputFile:
 	-- The path to the result file.
@@ -55,14 +55,14 @@ outputFile:
 		Hits level i : Number of Hits with the accuracy level i 
 		Cumulative Hits level n : The value of Cumulative Hits level n	 
 		Cumulative Failures level n : The value of Cumulative Hits level n		
-		Network Coherence level n: The value of the input network coherence with the pathway (level n).
+		Network Validity level n: The value of the input network coherence with the pathway (level n).
 				
 
 
 classical:(optional)
 	-- If you want to use the "classical use of KEGG".
 	-- With this option, the pathways will not be transformed into a gene network.  
-	-- Example: java -jar GeneNetCoherence.jar Nariai(2004).txt sce 3 results.txt classical
+	-- Example: java -jar GeneNetValidity.jar Nariai(2004).txt sce 3 results.txt classical
 
 
 Example Data

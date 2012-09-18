@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>GeneNetCoherence by fgomezvela</title>
+    <title>GeneNetVal by fgomezvela</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -17,8 +17,8 @@
   <body>
 
       <header>
-        <h1>GeneNetCoherence</h1>
-        <p>GeneNetworkCoherence</p>
+        <h1>GeneNetVal</h1>
+        <p>Gene Network Biological Validity based on gene-gene interaction relevance</p>
       </header>
 
       <div id="banner">
@@ -39,105 +39,88 @@
         <ul></ul>
       </nav>
       <section>
-        <h1>GeneNetCoherence: Gene Network Coherence based on interaction relevance</h1>
+        <h1>GeneNetVal: Gene Network Validity based on interaction relevance</h1>
 
 <h1></h1>
 
 <p>This is a Java application for network analysis. The application uses 
-the metabolic pathways stored in kegg to rate the coherence of an input network.</p>
+the metabolic pathways stored in kegg to rate the validity of an input network.</p>
 
-<p>The code is on <a href="http://fgomezvela.github.com/GeneNetCoherence/">http://fgomezvela.github.com/GeneNetCoherence/</a>.</p>
+<p>The code is on <a href="http://fgomezvela.github.com/GeneNetVal/">http://fgomezvela.github.com/GeneNetVal/</a>.</p>
 
 <h1></h1>
 
 <p>This application can be used in linux, mac, and windows.
-To use this tool, you must first download the GeneNetCoherence.zip file.</p>
+To use this tool, you must first download the GeneNetValidity.zip file.</p>
 
 <p>In ExampleData folder there are some gene networks for testing the tool.</p>
 
-<h2>Usage information</h2>
-
-<h1></h1>
+<h1>Usage information</h1>
 
 <blockquote>
-<p>java -jar GeneNetCoherence.jar inputFile organismId accuracyLevel outputFile [classical]</p>
+<p>java -jar GeneNetVal.jar inputFile organismId level outPutFile [classical]</p>
 
 <ul>
-<li>Usage: java -jar GeneNetCoherence.jar Nariai(2004).txt sce 3 results.txt</li>
+<li>Usage: java -jar GeneNetVal.jar Nariai(2004).txt sce 3 results.txt</li>
 </ul>
 </blockquote>
 
 <p>ARGUMENTS:</p>
 
-<h3>inputFile:</h3>
+<p>inputFile:
+    -- Notice: The tool uses the relative path from the root
+    -- Specification:
+                geneA;geneB
+                geneC;geneD
+                ...</p>
 
-<pre><code>-- Notice: The tool uses the relative path from the root
--- Specification:
-            geneA;geneB
-            geneC;geneD
-            ...
-</code></pre>
+<p>organismId:
+    -- Denotes the organism prefix. See: <a href="http://www.kegg.jp/kegg/catalog/org_list.html">http://www.kegg.jp/kegg/catalog/org_list.html</a>
+    -- Example: 
+            prefix: hsa     organism: Homo sapiens (human)
+            prefix: sce     organism: Saccharomyces cerevisiae (budding yeast)
+            ... </p>
 
-<h3>organismId:</h3>
+<p>accuracyLevel:
+    -- The threshold for the distance level of the methodology.
+    -- This argument indicates the maximun level to calculate the Hits
+    -- The distance level must be a value greater than 1.</p>
 
-<pre><code>-- Denotes the organism prefix. See: http://www.kegg.jp/kegg/catalog/org_list.html
--- Example: 
-        prefix: hsa     organism: Homo sapiens (human)
-        prefix: sce     organism: Saccharomyces cerevisiae (budding yeast)
-        ... 
-</code></pre>
+<p>outputFile:
+    -- The path to the result file.
+    -- Specification:</p>
 
-<h3>accuracyLevel:</h3>
-
-<pre><code>-- The threshold for the accuracy level of the methodology.
--- This argument indicates the maximun level to calculate the Hits
--- The accuracy level must be a value greater than 1.
-</code></pre>
-
-<h3>outputFile:</h3>
-
-<pre><code>-- The path to the result file.
--- Specification:
-
-    PathwayId : Pathway identifier
+<pre><code>    PathwayId : Pathway identifier
     Pathway Description : Pathway functional description     
     Hits level i : Number of Hits with the accuracy level i 
     Cumulative Hits level n : The value of Cumulative Hits level n   
     Cumulative Failures level n : The value of Cumulative Hits level n      
-    Network Coherence level n: The value of the input network coherence with the pathway (level n).
+    Network Validity level n: The value of the input network coherence with the pathway (level n).
 </code></pre>
 
-<h3>classical:(optional)</h3>
+<p>classical:(optional)
+    -- If you want to use the "classical use of KEGG".
+    -- With this option, the pathways will not be transformed into a gene network.<br>
+    -- Example: java -jar GeneNetValidity.jar Nariai(2004).txt sce 3 results.txt classical</p>
 
-<pre><code>-- If you want to use the "classical use of kegg".
--- With this option, the pathways will not be transformed into a gene network.  
--- Example: java -jar GeneNetCoherence.jar Nariai(2004).txt sce 3 results.txt classical
+<h1>Example Data</h1>
+
+<p>In the example data folder, there are stored four  well-known yeast networks. Network specification:</p>
+
+<pre><code>-- Nariai et al. (2004).txt: This network represents the Saccharomyces cerevisae (SCE) cell cycle
+                    and it is composed of 47 relationships between 43 yeast genes. 
+                The network is a reconstruction of the cell cylce from time–series microarray 
+                data refined using PPI data (Spellman et al., 1998).
+-- Batada et al. (2006).txt: The network presented by Batada et al. (2006) where a PPI network is presented
+                 in the study of the highly connected proteins in a network (hubs).
+-- Cherry et al.(2011)(SGD).txt: This network that provides an access to the complete Saccharomyces cerevisiae genomic sequence. 
+                In this study, only the PPI + PDI (protein–DNA interaction) data available were taken. 
+-- Lee et al. (2007)(YeastNet v.2).txt: Lee et al. (2007)(YeastNet v.2) which combines PPI, PDI, coexpression, phy- logenetic 
+                    conservation and literature information.
 </code></pre>
-
-<h2>Example Data</h2>
-
-<h1></h1>
-
-<p>In the example data folder, there are stored four  well-known yeast networks. Network specification.</p>
-
-<h3>Nariai et al. (2004).txt</h3>
-
-<p>This network represents the Saccharomyces cerevisae (SCE) cell cycle and it is composed of 47 relationships between 43 yeast genes. The network is a reconstruction of the cell cylce from time–series microarray data refined using PPI data (Spellman et al., 1998).</p>
-
-<h3>Batada et al. (2006).txt</h3>
-
-<p>The network presented by Batada et al. (2006) where a PPI network is presented in the study of the highly connected proteins in a network (hubs).</p>
-
-<h3>Cherry et al.(2011)(SGD).txt</h3>
-
-<p>This network that provides an access to the complete Saccharomyces cerevisiae genomic sequence. In this study, only the PPI + PDI  (protein–DNA interaction) data available were taken. </p>
-
-<h3>Lee et al. (2007)(YeastNet v.2).txt</h3>
-
-<p>Lee et al. (2007)(YeastNet v.2) which combines PPI, PDI, coexpression, phy- logenetic conservation and literature information.</p>
 
 <p>AUTHOR:
-<a href="http://www.upo.es/eps/fgomez/">Francisco Gómez Vela</a> (<a href="mailto:fgomez@upo.es">fgomez@upo.es</a>) and <a href="http://www.upo.es/eps/ndiaz/">Norberto Díaz-Díaz</a> (<a href="mailto:ndiaz@upo.es">ndiaz@upo.es</a>).
+Francisco Gómez Vela <a href="mailto:fgomez@upo.es">fgomez@upo.es</a> and Norberto Díaz Díaz <a href="mailto:ndiaz@upo.es">ndiaz@upo.es</a>.
 Copyright © 2012 Universidad Pablo de Olavide, Spain.</p>
       </section>
       <footer>
@@ -145,7 +128,7 @@ Copyright © 2012 Universidad Pablo de Olavide, Spain.</p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>

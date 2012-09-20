@@ -11,7 +11,7 @@ The code is on http://fgomezvela.github.com/GeneNetVal/.
 =================================
 
 This application can be used in linux, mac, and windows.
-To use this tool, you must first download the GeneNetValidity.zip file.
+To use this tool, you must first download the GeneNetVal.zip file.
 
 In ExampleData folder there are some gene networks for testing the tool.
 
@@ -62,7 +62,7 @@ outputFile:
 classical:(optional)
 	-- If you want to use the "classical use of KEGG".
 	-- With this option, the pathways will not be transformed into a gene network.  
-	-- Example: java -jar GeneNetValidity.jar Nariai(2004).txt sce 3 results.txt classical
+	-- Example: java -jar GeneNetVal.jar Nariai(2004).txt sce 3 results.txt classical
 
 
 Example Data
